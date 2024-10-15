@@ -44,6 +44,7 @@ const IncidentCard = () => {
     reportedByStaffName,
     reportedByEntityName
   } = useSelector((state) => state.incident); 
+
   const handleButtonClick = (type) => {
     // Update the selected button state
     setSelectedButton(type);
@@ -86,6 +87,7 @@ const IncidentCard = () => {
         className="header-button-group" 
         variant={selectedButton === "Employee" ? 'contained' : 'outlined'} 
         onClick={() => handleButtonClick("Employee")}
+        style={{ color: selectedButton === "Employee" ? 'white' : '#0039CE' }}
       >
         Employee
       </Button>
@@ -93,6 +95,8 @@ const IncidentCard = () => {
         className="header-button-group" 
         variant={selectedButton === "Contractor" ? 'contained' : 'outlined'} 
         onClick={() => handleButtonClick("Contractor")}
+        style={{ color: selectedButton === "Contractor" ? 'white' : '#0039CE' }}
+
       >
         Contractor
       </Button>
@@ -100,6 +104,8 @@ const IncidentCard = () => {
         className="header-button-group" 
         variant={selectedButton === "Visitor" ? 'contained' : 'outlined'} 
         onClick={() => handleButtonClick("Visitor")}
+        style={{ color: selectedButton === "Visitor" ? 'white' : '#0039CE' }}
+
       >
         Visitor
       </Button>
@@ -140,6 +146,8 @@ const IncidentCard = () => {
         className="header-button-group"
         variant={selectedButton === "Shift I" ? 'contained' : 'outlined'}
         onClick={() => handleButtonClick("Shift I")}
+        style={{ color: selectedButton === "Shift I" ? 'white' : '#0039CE' }}
+
       >
         Shift I
       </Button>
@@ -147,6 +155,8 @@ const IncidentCard = () => {
         className="header-button-group"
         variant={selectedButton === "Shift II" ? 'contained' : 'outlined'}
         onClick={() => handleButtonClick("Shift II")}
+        style={{ color: selectedButton === "Shift II" ? 'white' : '#0039CE' }}
+
       >
         Shift II
       </Button>
@@ -154,12 +164,15 @@ const IncidentCard = () => {
         className="header-button-group"
         variant={selectedButton === "Shift III" ? 'contained' : 'outlined'}
         onClick={() => handleButtonClick("Shift III")}
+        style={{ color: selectedButton === "Shift III" ? 'white' : '#0039CE' }}
+
       >
         Shift III
       </Button>
       <Button
         className="header-button-group"
         variant={selectedButton === "General" ? 'contained' : 'outlined'}
+        style={{ color: selectedButton === "General" ? 'white' : '#0039CE' }}
         onClick={() => handleButtonClick("General")}
       >
         General

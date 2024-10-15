@@ -20,6 +20,7 @@ const SeverityButtons = () => {
             className='header-button-group'
             onClick={() => handleButtonClick(severity)}
             variant={selectedSeverity === severity ? 'contained' : 'outlined'} // Change style based on selection
+            style={{ color: selectedSeverity === severity ? 'white' : '#0039CE' }}
           >
             {severity}
           </Button>

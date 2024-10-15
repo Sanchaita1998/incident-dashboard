@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import { Box, Button, ButtonGroup } from "@mui/material";
 import Header from "./Header";
@@ -26,16 +26,18 @@ import direction from "../Asset/images/directions_car.png";
 
 const Dashboard = () => {
   const steps = ["Incident Info", "Review"];
-  const [selectedButton, setSelectedButton] = useState(null);
+  const [selectedButton, setSelectedButton] = useState("");
+  const [typeButtons, setTypeButton] = useState("");
 
-  const handleThroughputClick = () => {
-    console.log("Throughput button clicked");
-    // Add your logic for throughput here
+  const handleButtonClick = (type) => {
+    // Update the selected button state
+    setSelectedButton(type);
+    setTypeButton(type)
+    // Dispatch the action
   };
 
-  const handleProductionClick = () => {
-    console.log("Production button clicked");
-    // Add your logic for production here
+  const handleClick = (button) => {
+    setSelectedButton(button); // Set selected button
   };
 
   return (
@@ -186,7 +188,7 @@ const Dashboard = () => {
               <Grid item container spacing={2} xs={12} md={6}>
                 <Grid item xs={12} md={6}>
                   <Card
-                    sx={{ minWidth: 275, height: 510 }}
+                    sx={{ minWidth: 300, height: 510 }}
                     className="CardFive"
                   >
                     <CardContent>
@@ -208,7 +210,9 @@ const Dashboard = () => {
                             ? "contained"
                             : "outlined"
                         } // Change style based on selection
-                        onClick={handleThroughputClick} // Click handler
+                        onClick={() => handleButtonClick("Throughput")} 
+                        style={{ color: selectedButton === "Throughput" ? 'white' : '#0039CE' }}
+                      
                       >
                         Throughput
                       </Button>
@@ -218,8 +222,10 @@ const Dashboard = () => {
                           selectedButton === "Production"
                             ? "contained"
                             : "outlined"
-                        } // Change style based on selection
-                        onClick={handleProductionClick} // Click handler
+                        } 
+                        style={{ color: selectedButton === "Production" ? 'white' : '#0039CE' }}
+
+                        onClick={() => handleButtonClick("Production")} // Click handler
                       >
                         Production
                       </Button>
@@ -228,8 +234,22 @@ const Dashboard = () => {
                       Activity Operations Status
                     </Typography>
                     <ButtonGroup>
-                      <Button className="header-button-group">Operating</Button>
-                      <Button className="header-button-group">Shutdown</Button>
+                      <Button
+                        variant={
+                          selectedButton === "Operating"
+                            ? "contained"
+                            : "outlined"
+                        }
+                        onClick={() => handleButtonClick("Operating")}
+                        className="header-button-group"
+                      >
+                        Operating
+                      </Button>
+                      <Button variant={
+                          selectedButton === "Maintenance"
+                            ? "contained"
+                            : "outlined"
+                        }   onClick={() => handleButtonClick("Maintenance")} className="header-button-group">Shutdown</Button>
                       <Button className="header-button-group">
                         Maintenance
                       </Button>
@@ -238,9 +258,21 @@ const Dashboard = () => {
                       Similar incident happened?
                     </Typography>
                     <ButtonGroup>
-                      <Button className="header-button-group">Yes</Button>
-                      <Button className="header-button-group">No</Button>
-                      <Button className="header-button-group">Not Aware</Button>
+                      <Button variant={
+                          selectedButton === "Yes"
+                            ? "contained"
+                            : "outlined"
+                        }   onClick={() => handleButtonClick("Yes")} className="header-button-group">Yes</Button>
+                      <Button  variant={
+                          selectedButton === "No"
+                            ? "contained"
+                            : "outlined"
+                        }   onClick={() => handleButtonClick("NO")}className="header-button-group">No</Button>
+                      <Button  variant={
+                          selectedButton === "Not Aware"
+                            ? "contained"
+                            : "outlined"
+                        }   onClick={() => handleButtonClick("Maintenance")}className="header-button-group">Not Aware</Button>
                     </ButtonGroup>
                   </CardContainer>
                   <CardContainer sx={{ marginTop: "20px" }}>
@@ -249,8 +281,16 @@ const Dashboard = () => {
                       <img src={direction} alt="" />
                       <img src={bulid} alt="" />
                       <ButtonGroup>
-                        <Button className="header-button-group">Yes</Button>
-                        <Button className="header-button-group">No</Button>
+                        <Button variant={
+                          selectedButton === "Yes"
+                            ? "contained"
+                            : "outlined"
+                        }   onClick={() => handleButtonClick("Yes")} className="header-button-group">Yes</Button>
+                        <Button  variant={
+                          selectedButton === "No"
+                            ? "contained"
+                            : "outlined"
+                        }   onClick={() => handleButtonClick("NO")}className="header-button-group">No</Button>
                       </ButtonGroup>
                     </div>
                     <div className="img-button">
@@ -258,15 +298,31 @@ const Dashboard = () => {
                         Evidence
                       </Typography>
                       <ButtonGroup>
-                        <Button className="header-button-group">Yes</Button>
-                        <Button className="header-button-group">No</Button>
+                        <Button variant={
+                          selectedButton === "Yes"
+                            ? "contained"
+                            : "outlined"
+                        }   onClick={() => handleButtonClick("EvidenYes")}className="header-button-group">Yes</Button>
+                        <Button variant={
+                          selectedButton === "Maintenance"
+                            ? "contained"
+                            : "outlined"
+                        }   onClick={() => handleButtonClick("EvidenceNo")}className="header-button-group">No</Button>
                       </ButtonGroup>
                     </div>
                     <div className="img-button">
                       <Typography className="card-six-title">CAPA</Typography>
                       <ButtonGroup>
-                        <Button className="header-button-group">Yes</Button>
-                        <Button className="header-button-group">No</Button>
+                        <Button variant={
+                          typeButtons === "Yes"
+                            ? "contained"
+                            : "outlined"
+                        }   onClick={() => handleButtonClick("CAPAYes")} className="header-button-group">Yes</Button>
+                        <Button  variant={
+                          typeButtons === "No"
+                            ? "contained"
+                            : "outlined"
+                        }   onClick={() => handleButtonClick("CAPANo")}className="header-button-group">No</Button>
                       </ButtonGroup>
                     </div>
                     <div className="img-button">
@@ -274,15 +330,31 @@ const Dashboard = () => {
                         Regulatory
                       </Typography>
                       <ButtonGroup>
-                        <Button className="header-button-group">Yes</Button>
-                        <Button className="header-button-group">No</Button>
+                        <Button variant={
+                          typeButtons === "RegulatoryYes"
+                            ? "contained"
+                            : "outlined"
+                        }   onClick={() => handleButtonClick("RegulatoryYes")} className="header-button-group">Yes</Button>
+                        <Button variant={
+                          typeButtons === "RegulatoryNo"
+                            ? "contained"
+                            : "outlined"
+                        }   onClick={() => handleButtonClick("RegulatoryN0")}className="header-button-group">No</Button>
                       </ButtonGroup>
                     </div>
                     <div className="img-button">
                       <Typography className="card-six-title">LTI</Typography>
                       <ButtonGroup>
-                        <Button className="header-button-group">Yes</Button>
-                        <Button className="header-button-group">No</Button>
+                      <Button variant={
+                          typeButtons === "LTIYes"
+                            ? "contained"
+                            : "outlined"
+                        }   onClick={() => handleButtonClick("LTIYes")} className="header-button-group">Yes</Button>
+                        <Button variant={
+                          typeButtons === "No"
+                            ? "contained"
+                            : "outlined"
+                        }   onClick={() => handleButtonClick("LTIN0")}className="header-button-group">No</Button>
                       </ButtonGroup>
                     </div>
                   </CardContainer>

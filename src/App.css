@@ -96,6 +96,9 @@ button.header-button-group {
   font-weight: 600;
   line-height: normal;
 }
+button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-colorPrimary.MuiButtonGroup-grouped.MuiButtonGroup-groupedHorizontal.MuiButtonGroup-groupedOutlined.MuiButtonGroup-groupedOutlinedHorizontal.MuiButtonGroup-groupedOutlinedPrimary.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-colorPrimary.header-button-group.MuiButtonGroup-firstButton.css-ce2bw-MuiButtonBase-root-MuiButton-root {
+  color: #fff;
+}
 
 .css-12eb3rq-MuiStepLabel-label.Mui-active {
   color: #1E1E1E;
