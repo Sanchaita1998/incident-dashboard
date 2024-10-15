@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header-one{
+  background: #1877F2 !important;
+}
+.header-one-title{
+  color: rgba(255, 255, 255, 0.70);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+  letter-spacing: 0.15px;
+}
+
+.header-two{
+  background: #CFE4FF !important;
+}
+.header-title{
+  text-align: right;
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+
+
+
+
+
+.StepperArea {
+  margin-bottom: 20px;
+}
+
+.card1-header-container {
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.card1-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.card-header-title {
+  color: #000 ;
+  font-size: 14px ;
+  line-height: normal ;
+  letter-spacing: 0.15px ;
+}
+
+.card1-header-button {
+  display: flex;
+  gap: 12px;
+
+}
+
+.header-button {
+  color: #0039CE !important;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.card1-header-button button {
+  font-size: 12px;
+  padding: 8px 12px;
+}
+
+.CardOne,
+.CardTwo, .cardThree, .CardFour, .CardFive , .CardSix{
+  border-radius: 8px !important;
+  border: 1px solid rgba(0, 0, 0, 0.10) !important;
+  background: #FFF !important;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
+}
+
+button.header-button-group {
+  color: #0039CE;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.css-12eb3rq-MuiStepLabel-label.Mui-active {
+  color: #1E1E1E;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+}
+.css-12eb3rq-MuiStepLabel-label {
+  color: #1E1E1E;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+}
+.card-three-text{
+  color: #000  !important;
+font-size: 14px !important;
+font-style: normal !important;
+font-weight: 400 !important;
+line-height: normal !important;
+letter-spacing: 0.321px !important;
+text-transform: capitalize !important;
+padding-bottom: 30px;
+}
+.card-three-para {
+  width: 117%;
+}
+.card-three-para-text{
+  color: #000 !important;
+font-size: 14px !important;
+font-style: normal !important;
+font-weight: 500 !important;
+line-height: 160% !important; 
+letter-spacing: 0.15px !important;
+}
+
+.card-three-para-text span {
+  margin-left: 50%;
+}
+.card-three-subtext{
+  text-align: right;
+  color: #000 !important;
+font-size: 12px !important;
+font-style: normal !important;
+font-weight: 400 !important;
+line-height: 160% !important; /* 19.2px */
+letter-spacing: 0.15px !important;
+}
+.report-by, .shift{
+  display: flex;
+  gap: 20;
+}
+
+.card-six-title{
+  font-size: 14px !important;
+font-style: normal !important;
+font-weight: 400 !important;
+line-height: 160% !important; /* 19.2px */
+letter-spacing: 0.15px !important;
+}
+
+.img-button{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+/* Custom styles for AppBar */
+.header-one, .header-two {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Hide elements on mobile */
+@media (max-width: 600px) {
+  .header-one-title {
+    font-size: 16px;
+  }
+
+  .header-two .header-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  /* Hide icons on mobile */
+  .header-one .MuiIconButton-root {
+    display: none;
+  }
+
+  /* Show search on mobile */
+  .header-one .MuiTypography-root {
+    display: inline-block;
+  }
+}
+
+/* Adjustments for tablet size */
+@media (max-width: 960px) {
+  .header-one-title {
+    font-size: 18px;
+  }
+
+  .header-two .header-title {
+    font-size: 20px;
+  }
+
+  /* Adjust icon sizes on tablets */
+  .MuiIconButton-root {
+    padding: 10px;
+  }
+}
+/* Example media queries for additional control */
+@media (max-width: 600px) {
+  .header-button-group {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .card-three-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header-button-group {
+    font-size: 14px;
+  }
+}
